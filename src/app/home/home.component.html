@@ -6,7 +6,7 @@
     <p>Your wish list items {{ itemCount }}</p>
   </div>
 </div>
-<div class="container color-light">
+<div class="container color-light" [@items]="items.length">
   <div class="col">
     <p class="sm">Wish List Form</p>
 
@@ -16,7 +16,7 @@
     </form>
   </div>
   <div class="col">
-    <p class="life-container" *ngFor="let item of items">
+    <p class="life-container" *ngFor="let item of items; let i = index" (click)="removeItem(i)">
       {{ item }}
     </p>
   </div>
